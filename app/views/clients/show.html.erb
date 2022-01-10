@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card" >
+        <div class="card-body">
+          <div class="text-left">
+            <h1><%= @client.nom %></h1>
+            <h5>Adresse : <%= @client.adresse %></h5>
+            <h5>Code postal : <%= @client.codepostal %></h5>
+            <h5>Ville : <%= @client.ville %></h5>
+            <h5>Tel : 0<%= @client.telephone %></h5>
+            <h5>Email : <%= @client.email %></h5>
+            <h5>Contact : <%= @client.contact %></h5>
+            <h5>Referent : <%= @client.referent %></h5>
+            <h5>Tel.Referent : <%= @client.telreferent %></h5>
+          </div>
+          <div class="row">
+            <div class="col-1 float-right">
+              <%= link_to "Edition", {controller: "clients", action: "edit"}, class: "btn btn-primary" %>
+            </div>
+            <div class="col-1 float-right">
+              <%= button_to "delete", @client, :method => :delete, class: 'btn btn-danger' %>
+            </div>
+          </div>
+
+
+          <div class="text-center" style="padding: 20px">
+            <h2>Inventaires</h2>
+          </div>
+
+          <% @client.inventaires.each do |inventaire| %>
+     <table class="table table-bordered text-center">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#id</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Total</th>
+            <th scope="col">Date de création</th>
+            <th scope="col">Imprimer</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><%= inventaire.id %></th>
+            <td><%= inventaire.quantity %></td>
+            <td><%= inventaire.total %></td>
+            <td><%= inventaire.created_at.strftime("#{inventaire.created_at.day} %b %Y") %></td>
+            <td><%= link_to "I", {controller: "clients", action: "edit"}, class: "btn btn-info" %></td>
+            <td><%= link_to "E", {controller: "clients", action: "edit"}, class: "btn btn-warning" %></td>
+            <td><%= button_to 'X', [inventaire.client, inventaire],
+              method: :delete,
+              data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <% end %>
+
+      <div class="text-center" style="margin: 20px">
+        <h2>Ajouter un inventaire :</h2>
+      </div>
+        <%= form_with model: [ @client, @client.inventaires.build ] do |form| %>
+          <a>
+            <%= form.label :quantité %><br>
+            <%= form.text_field :quantity, class: 'form-control' %>
+          </a>
+          <a>
+            <%= form.label :total %><br>
+            <%= form.text_area :total, class: 'form-control' %>
+          </a>
+          <div style="padding: 20px">
+            <a>
+              <%= form.submit "Envoyer", class: 'btn btn-success' %>
+            </a>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
