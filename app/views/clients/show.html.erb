@@ -1,10 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <div class="card" >
+      <div class="card" id="cardrender" >
         <div class="card-body">
           <div class="text-left">
+            <div class="colorfonth1">
             <h1><%= @client.nom %></h1>
+            </div>
             <h5>Adresse : <%= @client.adresse %></h5>
             <h5>Code postal : <%= @client.codepostal %></h5>
             <h5>Ville : <%= @client.ville %></h5>
