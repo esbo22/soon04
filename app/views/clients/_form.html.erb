@@ -15,6 +15,58 @@
     <% end %>
   </div>
 
+
+  <div>
+    <%= form.label :adresse %><br>
+    <%= form.text_field :adresse %>
+    <% client.errors.full_messages_for(:adresse).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :codepostal %><br>
+    <%= form.text_field :codepostal %>
+    <% client.errors.full_messages_for(:codepostal).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :contact %><br>
+    <%= form.text_field :contact %>
+    <% client.errors.full_messages_for(:contact).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :telephone %><br>
+    <%= form.text_field :telephone %>
+    <% client.errors.full_messages_for(:telephone).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :referent %><br>
+    <%= form.text_field :referent %>
+    <% client.errors.full_messages_for(:referent).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :telreferent %><br>
+    <%= form.text_field :telreferent %>
+    <% client.errors.full_messages_for(:telreferent).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+    <% client.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
   <div>
     <%= form.submit %>
   </div>

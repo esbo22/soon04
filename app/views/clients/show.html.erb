@@ -4,6 +4,7 @@
       <div class="card" id="cardrender" >
         <div class="card-body">
           <div class="text-left">
+
             <div class="colorfonth1">
             <h1><%= @client.nom %></h1>
             </div>
@@ -14,7 +15,8 @@
             <h5>Email : <%= @client.email %></h5>
             <h5>Contact : <%= @client.contact %></h5>
             <h5>Referent : <%= @client.referent %></h5>
-            <h5>Tel.Referent : <%= @client.telreferent %></h5>
+            <h5>Tel.Referent : 0<%= @client.telreferent %></h5>
+
           </div>
           <div class="row">
             <div class="col-1 float-right">
