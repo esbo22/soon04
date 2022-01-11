@@ -1,5 +1,13 @@
 #navbarid {
   display: flex;
   justify-content: space-between;
-  background-color: #ffffff;
+  margin: 1em;
+}
+
+#navsearch {
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  box-sizing: border-box;
+  border-radius: 16px;
+  margin-left: -8px;
 }

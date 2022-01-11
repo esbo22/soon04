@@ -28,14 +28,14 @@
           </div>
 
 
-          <div class="text-center" style="padding: 20px">
+          <div class="text-center fontab" style="padding: 20px; color:black">
             <h2>Inventaires</h2>
           </div>
 
           <% @client.inventaires.each do |inventaire| %>
      <table class="table table-bordered text-center">
         <thead class="thead-dark">
-          <tr>
+          <tr class="fontab">
             <th scope="col">#id</th>
             <th scope="col">Quantité</th>
             <th scope="col">Total</th>
@@ -47,7 +47,8 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row"><%= inventaire.id %></th>
+            <div class="fontabindex">
+            <td><%= inventaire.id %></td>
             <td><%= inventaire.quantity %></td>
             <td><%= inventaire.total %></td>
             <td><%= inventaire.created_at.strftime("#{inventaire.created_at.day} %b %Y") %></td>
@@ -56,27 +57,28 @@
             <td><%= button_to 'X', [inventaire.client, inventaire],
               method: :delete,
               data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %></td>
+            </div>
           </tr>
         </tbody>
       </table>
 
       <% end %>
 
-      <div class="text-center" style="margin: 20px">
+      <div class="text-center fontab" style="margin: 20px; color:black">
         <h2>Ajouter un inventaire :</h2>
       </div>
         <%= form_with model: [ @client, @client.inventaires.build ] do |form| %>
-          <a>
+          <a class="fontabindex">
             <%= form.label :quantité %><br>
             <%= form.text_field :quantity, class: 'form-control' %>
           </a>
-          <a>
+          <a class="fontabindex">
             <%= form.label :total %><br>
             <%= form.text_area :total, class: 'form-control' %>
           </a>
           <div style="padding: 20px">
             <a>
-              <%= form.submit "Envoyer", class: 'btn btn-success' %>
+              <%= form.submit "Envoyer", class: 'btn btn-success btn-lg' %>
             </a>
           </div>
         <% end %>
