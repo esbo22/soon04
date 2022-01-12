@@ -28,10 +28,23 @@
           </li>
         </ul>
       </div>
+
+
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search" id="navsearch">
+            <%= form_tag clients_path, method: :get do %>
+              <%= text_field_tag :query,
+                          params[:query],
+                  class: "form-control mr-sm-2",
+                    id: "navsearch",
+              placeholder: "Recherche"
+              %>
         </form>
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <%= submit_tag "Search", :nom => nil, class: "btn btn-outline-success my-2 my-sm-0" %>
+        <% end %>
+
+
+
+
           <a style="margin: 5px"><%= Time.now.strftime("%d/%m/%Y") %></a>
     </nav>
     <div class="backgroundinv forminv">

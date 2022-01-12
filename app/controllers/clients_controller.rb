@@ -1,7 +1,11 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
   def index
-    @clients = Client.all
+      if params[:query].present?
+        @clients = Client.where("nom LIKE ?", "%#{params[:query]}%")
+      else
+        @clients = Client.all
+      end
   end
 
   def show
