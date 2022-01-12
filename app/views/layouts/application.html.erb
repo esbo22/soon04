@@ -47,7 +47,10 @@
 
           <a style="margin: 5px"><%= Time.now.strftime("%d/%m/%Y") %></a>
     </nav>
-    <div class="backgroundinv forminv">
+      <div id="flash">
+        <%= render "layouts/flash" %>
+      </div>
+      <script type="text/javascript">window.setTimeout("document.getElementById('flash').style.display='none';", 2500); </script>
       <%= yield %>
     </div>
   </body>

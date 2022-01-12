@@ -20,7 +20,9 @@ class ClientsController < ApplicationController
 
     if @client.save
       redirect_to @client
+      flash[:message] = "Client créer avec succès."
     else
+      flash[:message] = "hmm petit problème..."
       render :new, status: :unprocessable_entity
     end
   end
