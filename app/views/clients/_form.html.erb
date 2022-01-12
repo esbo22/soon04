@@ -1,73 +1,49 @@
-<%= form_with model: client do |form| %>
-  <div>
-    <%= form.label :nom %><br>
-    <%= form.text_field :nom %>
-    <% client.errors.full_messages_for(:nom).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.label :ville %><br>
-    <%= form.text_area :ville %><br>
-    <% client.errors.full_messages_for(:ville).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+  <%= form_with model: client do |form| %>
+<form class="row g-3">
+  <div class="col-md-3">
+    <%= form.label :nom, class: 'form-label' %>
+    <%= form.text_field :nom, class: 'form-control' %>
   </div>
 
 
-  <div>
-    <%= form.label :adresse %><br>
-    <%= form.text_field :adresse %>
-    <% client.errors.full_messages_for(:adresse).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+
+
+
+  <div class="col-md-3">
+    <%= form.label :ville, class: 'form-label' %>
+    <%= form.text_field :ville, class: 'form-control' %>
   </div>
-  <div>
-    <%= form.label :codepostal %><br>
-    <%= form.text_field :codepostal %>
-    <% client.errors.full_messages_for(:codepostal).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+  <div class="col-3">
+    <%= form.label :adresse, class: 'form-label' %>
+    <%= form.text_area :adresse, class: 'form-control' %>
+  </div>
+  <div class="col-2">
+    <%= form.label :codepostal, class: 'form-label' %>
+    <%= form.text_field :codepostal, class: 'form-control' %>
+  </div>
+  <div class="col-md-2">
+    <%= form.label :contact, class: 'form-label' %>
+    <%= form.text_field :contact, class: 'form-control' %>
+  </div>
+  <div class="col-md-2">
+      <%= form.label :telephone, class: 'form-label' %>
+    <%= form.text_field :telephone, class: 'form-control' %>
+  </div>
+  <div class="col-md-2">
+    <%= form.label :referent, class: 'form-label' %>
+    <%= form.text_field :referent, class: 'form-control' %>
+  </div>
+  <div class="col-md-2">
+    <%= form.label :telreferent, class: 'form-label' %>
+    <%= form.text_field :telreferent, class: 'form-control' %>
+  </div>
+  <div class="col-md-4">
+    <%= form.label :email, class: 'form-label' %>
+    <%= form.text_field :email, class: 'form-control' %></br
   </div>
 
-  <div>
-    <%= form.label :contact %><br>
-    <%= form.text_field :contact %>
-    <% client.errors.full_messages_for(:contact).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+  <div class="col-12">
+    <%= form.submit "Envoyer", class: 'btn btn-success btn-lg' %>
   </div>
-  <div>
-    <%= form.label :telephone %><br>
-    <%= form.text_field :telephone %>
-    <% client.errors.full_messages_for(:telephone).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-  <div>
-    <%= form.label :referent %><br>
-    <%= form.text_field :referent %>
-    <% client.errors.full_messages_for(:referent).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-  <div>
-    <%= form.label :telreferent %><br>
-    <%= form.text_field :telreferent %>
-    <% client.errors.full_messages_for(:telreferent).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-  <div>
-    <%= form.label :email %><br>
-    <%= form.text_field :email %>
-    <% client.errors.full_messages_for(:email).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</form>
+  <% end %>
