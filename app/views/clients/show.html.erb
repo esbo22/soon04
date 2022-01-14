@@ -1,31 +1,102 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-      <div class="card" id="cardrender" >
+    <div class="col">
+      <div class="card cardrender" >
         <div class="card-body">
-          <div class="text-left">
+            <div class="colorfonth1" id="cardrenderclient">
+              <h1><%= @client.nom %></h1><br>
+            </div>
 
-            <div class="colorfonth1">
-            <h1><%= @client.nom %></h1>
+            <div class="row">
+              <div class="col-2">
+                <i class="far fa-envelope"></i>
+                <h6>Adresse :</h6>
+              </div>
+              <div class="col-2">
+                <h5><%= @client.adresse %></h5>
+              </div>
             </div>
-            <h5>Adresse : <%= @client.adresse %></h5>
-            <h5>Code postal : <%= @client.codepostal %></h5>
-            <h5>Ville : <%= @client.ville %></h5>
-            <h5>Tel : 0<%= @client.telephone %></h5>
-            <h5>Email : <%= @client.email %></h5>
-            <h5>Contact : <%= @client.contact %></h5>
-            <h5>Referent : <%= @client.referent %></h5>
-            <h5>Tel.Referent : 0<%= @client.telreferent %></h5>
 
-          </div>
-          <div class="row">
-            <div class="col-1 float-start">
-              <%= link_to "Edition", {controller: "clients", action: "edit"}, class: "btn btn-outline-primary" %>
+            <div class="row">
+              <div class="col-2">
+                <h6>Code postal : </h6>
+              </div>
+              <div class="col-2">
+                <h5><%= @client.codepostal %></h5>
+              </div>
             </div>
-            <div class="col-1 float-end">
-              <%= button_to "Supprimer", @client, :method => :delete, class: 'btn btn-danger' %>
+
+            <div class="row">
+              <div class="col-2">
+                <h6>Ville : </h6>
+              </div>
+              <div class="col-2">
+                <h5><%= @client.ville %></h5>
+              </div>
             </div>
-          </div>
+
+            <div class="row">
+              <div class="col-2">
+                <h6>Tel : </h6>
+              </div>
+              <div class="col-2">
+                <h5>0<%= @client.telephone %></h5>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-2">
+                <h6>Email : </h6>
+              </div>
+              <div class="col-2">
+                <h5><%= @client.email %></h5>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-2">
+                <h6>Contact : </h6>
+              </div>
+              <div class="col-2">
+                <h5><%= @client.contact %></h5>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-2">
+                <h6>Referent : </h6>
+              </div>
+              <div class="col-2">
+                <h5><%= @client.referent %></h5>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-2">
+                <h6>Tel.Referent : </h6>
+              </div>
+              <div class="col-2">
+                <h5>0<%= @client.telreferent %></h5><br>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <div class="float-start">
+                  <%= link_to "Edition", {controller: "clients", action: "edit"}, class: "btn btn-outline-primary" %>
+                </div>
+              </div>
+              <div class="col-1">
+                <div class="float-end">
+                  <%= button_to "Supprimer", @client, :method => :delete, class: 'btn btn-danger' %>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+
+      <div class="card cardrender">
 
           <div class="text-center fontab" style="padding: 20px; color:black">
             <h2>Inventaires</h2>
@@ -73,14 +144,13 @@
           </a>
           <a class="fontabindex">
             <%= form.label :total %><br>
-            <%= form.text_area :total, class: 'form-control' %>
+            <%= form.text_field :total, class: 'form-control' %>
           </a>
           <div style="padding: 20px">
             <a>
               <%= form.submit "Envoyer", class: 'btn btn-success btn-lg' %>
             </a>
-          </div>
-        <% end %>
+          <% end %>
         </div>
       </div>
     </div>
