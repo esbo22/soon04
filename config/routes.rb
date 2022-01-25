@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   resources :clients do
     resources :inventaires
   end
+
+  resources :clients do
+    resources :factures
+  end
 end

@@ -17,6 +17,3 @@ class InventairesController < ApplicationController
       params.require(:inventaire).permit(:quantity, :total)
     end
 end
-
-
-

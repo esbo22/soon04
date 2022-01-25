@@ -152,6 +152,34 @@
             </a>
           <% end %>
         </div>
+
+        <div class="text-center fontab" style="margin: 20px; color:black">
+        <h2>Générer une facture :</h2>
+      </div>
+        <%= form_with model: [ @client, @client.facture.build ] do |form| %>
+          <a class="fontabindex">
+            <%= form.label :client %><br>
+            <div class="col-md-2">
+              <%= form.text_field :client_id, class: 'form-control-plaintext' %>
+            </div>
+
+          </a>
+          <a class="fontabindex">
+            <%= form.label :inventaire %><br>
+            <%= form.select :inventaire_id, options_for_select(Client.find(params[:id]).inventaires.map{|i| [i.id]}, form.object.inventaire_id), {}, {class: "form-control"} %>
+          </a>
+          <div style="padding: 20px">
+            <a>
+              <%= form.submit "Générer", class: 'btn btn-success btn-lg' %>
+            </a>
+            <a>
+              <%= link_to 'Show', client_facture_path(@client), class: 'btn btn-success btn-lg' %>
+               <!-- link_to "Show Facture", {controller: "factures", action: "show"}, class: "btn btn-outline-primary" -->
+            </a>
+          <% end %>
+
+        </div>
+
       </div>
     </div>
   </div>

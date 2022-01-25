@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card cardrender">
+        <div class="card-body">
+          <h2>Sooninfo</h2>
+          <h3>Za du Nenès</h3>
+          <h3>22540 Louargat</h3>
+        </div>
+      </div>
+      <div class="card cardrender" >
+        <div class="card-body">
+            <div class="colorfonth1" id="cardrenderclient">
+              <h2> facture.id = <%= @facture.id %></h2>
+              <h2> facture.client_id = <%= @facture.client_id %></h2>
+              <h2> facture.inventaire_id = <%= @facture.inventaire_id %></h2>
+              <h2> Nom du client = <%= @facture.client.nom %></h2>
+              <h2> Adresse du client = <%= @facture.client.adresse %></h2>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

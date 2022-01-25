@@ -1,0 +1,15 @@
+  <%= form_with model: facture do |form| %>
+  <form class="row g-3">
+    <div class="col-md-2">
+      <%= form.label :inventaire %><br>
+      <%= form.select :inventaire_id, options_for_select(Inventaire.all.map{|i| [i.id]}, form.object.inventaire_id), {}, {class: "form-control"} %>
+    </div>
+    <div class="col-md-4">
+      <%= form.label :client %><br>
+      <%= form.text_field :client_id, class: 'form-control' %>
+    </div>
+    <div class="col-12">
+      <%= form.submit "Envoyer", class: 'btn btn-success btn-lg' %>
+    </div>
+  </form>
+  <% end %>
