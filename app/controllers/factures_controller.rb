@@ -11,7 +11,8 @@ class FacturesController < ApplicationController
   def new
     @facture = Facture.new
   end
-
+  # quand on submit cela enregistre une entrée client_id et inventaire_id,
+  # il faut pouvoir recuperer les informations de l inventaire et du client dans la show puis genere un pdf
   def create
       @client = Client.find(params[:client_id])
        @facture = Facture.new(facture_params)
@@ -19,7 +20,7 @@ class FacturesController < ApplicationController
       redirect_to client_path(@client)
       flash[:message] = "Facture créer avec succès."
     else
-      flash[:message] = "hmm petit problème..."
+      flash[:message] = "hmm petit problème...regarder la connexion à la base sql ?"
       redirect_to client_path(@client)
     end
   end

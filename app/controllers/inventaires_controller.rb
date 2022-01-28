@@ -14,6 +14,6 @@ class InventairesController < ApplicationController
 
   private
     def inventaire_params
-      params.require(:inventaire).permit(:quantity, :total)
+      params.require(:inventaire).permit(:quantity, :total, :id)
     end
 end

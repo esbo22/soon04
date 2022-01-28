@@ -126,7 +126,7 @@
             <td><%= link_to "E", {controller: "clients", action: "edit"}, class: "btn btn-warning" %></td>
             <td><%= button_to 'X', [inventaire.client, inventaire],
               method: :delete,
-              data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %></td>
+              data: { confirm: "vraiment ?" }, class: 'btn btn-danger' %></td>
             </div>
           </tr>
         </tbody>
@@ -153,6 +153,48 @@
           <% end %>
         </div>
 
+        <div class="text-center fontab" style="padding: 20px; color:black">
+            <h2>Factures</h2>
+          </div>
+
+          <% @client.factures.each do |facture| %>
+     <table class="table table-bordered text-center">
+        <thead class="thead-dark">
+          <tr class="fontab">
+            <th scope="col">#id</th>
+            <th scope="col">client_id</th>
+            <th scope="col">inventaire_id</th>
+            <th scope="col">Date de création</th>
+            <th scope="col">Imprimer</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <div class="fontabindex">
+            <td><%= facture.id %></td>
+            <td><%= facture.client_id %></td>
+            <td><%= facture.inventaire_id %></td>
+            <td><%= facture.created_at.strftime("#{facture.created_at.day} %b %Y") %></td>
+            <td><%= link_to "I", {controller: "clients", action: "edit"}, class: "btn btn-info" %></td>
+            <td><%= link_to "E", {controller: "clients", action: "edit"}, class: "btn btn-warning" %></td>
+            <td><%= button_to 'X', [facture.client, facture],
+              method: :delete,
+              data: { confirm: "vraiment ?" }, class: 'btn btn-danger' %></td>
+            </div>
+          </tr>
+        </tbody>
+      </table>
+
+      <% end %>
+
+
+
+
+
+
+
         <div class="text-center fontab" style="margin: 20px; color:black">
         <h2>Générer une facture :</h2>
       </div>
@@ -174,7 +216,6 @@
             </a>
             <a>
               <%= link_to 'Show', client_facture_path(@client), class: 'btn btn-success btn-lg' %>
-               <!-- link_to "Show Facture", {controller: "factures", action: "show"}, class: "btn btn-outline-primary" -->
             </a>
           <% end %>
 
