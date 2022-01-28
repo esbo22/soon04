@@ -153,41 +153,7 @@
           <% end %>
         </div>
 
-        <div class="text-center fontab" style="padding: 20px; color:black">
-            <h2>Factures</h2>
-          </div>
 
-          <% @client.factures.each do |facture| %>
-     <table class="table table-bordered text-center">
-        <thead class="thead-dark">
-          <tr class="fontab">
-            <th scope="col">#id</th>
-            <th scope="col">client_id</th>
-            <th scope="col">inventaire_id</th>
-            <th scope="col">Date de création</th>
-            <th scope="col">Imprimer</th>
-            <th scope="col">Modifier</th>
-            <th scope="col">Supprimer</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <div class="fontabindex">
-            <td><%= facture.id %></td>
-            <td><%= facture.client_id %></td>
-            <td><%= facture.inventaire_id %></td>
-            <td><%= facture.created_at.strftime("#{facture.created_at.day} %b %Y") %></td>
-            <td><%= link_to "I", {controller: "clients", action: "edit"}, class: "btn btn-info" %></td>
-            <td><%= link_to "E", {controller: "clients", action: "edit"}, class: "btn btn-warning" %></td>
-            <td><%= button_to 'X', [facture.client, facture],
-              method: :delete,
-              data: { confirm: "vraiment ?" }, class: 'btn btn-danger' %></td>
-            </div>
-          </tr>
-        </tbody>
-      </table>
-
-      <% end %>
 
 
 
