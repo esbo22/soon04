@@ -13,4 +13,7 @@ bundle install
 yarn install
 rails s
 
+
+ruby = 2.7.4
+rails = 7.0.1
 # soon04
