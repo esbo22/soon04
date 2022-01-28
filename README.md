@@ -8,4 +8,9 @@ vous pouvez proposé ce que vous voulez pour faire évoluer le soft.
 
 Pour le moment c'est surtout pour me remettre à ruby on rails donc le code n'est pas optimisé.
 
+installation :
+bundle install
+yarn install
+rails s
+
 # soon04
