@@ -1,25 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+le but :
+facilité la gestion des inventaires D3E.
+pouvoir ajouter un client, crée un ou des inventaires et généré les documents en pdf.
+la v1 à pour but d'avoir un backend qui fonctionne parfaitement.
+vous pouvez proposé ce que vous voulez pour faire évoluer le soft.
 
-Things you may want to cover:
+Pour le moment c'est surtout pour me remettre à ruby on rails donc le code n'est pas optimisé.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # soon04
