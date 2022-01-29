@@ -3,107 +3,94 @@
     <div class="col">
       <div class="card cardrender" >
         <div class="card-body">
-            <div class="colorfonth1" id="cardrenderclient">
-              <h1><%= @client.nom %></h1><br>
+          <div class="colorfonth1" id="cardrenderclient">
+            <h1><%= @client.nom %></h1><br>
+          </div>
+          <div class="row">
+            <div class="col-2">
+              <i class="far fa-envelope"></i>
+              <h6>Adresse :</h6>
             </div>
-
-            <div class="row">
-              <div class="col-2">
-                <i class="far fa-envelope"></i>
-                <h6>Adresse :</h6>
-              </div>
-              <div class="col-2">
-                <h5><%= @client.adresse %></h5>
-              </div>
+            <div class="col-2">
+              <h5><%= @client.adresse %></h5>
             </div>
-
-            <div class="row">
-              <div class="col-2">
-                <h6>Code postal : </h6>
-              </div>
-              <div class="col-2">
-                <h5><%= @client.codepostal %></h5>
-              </div>
+          </div>
+          <div class="row">
+            <div class="col-2">
+              <h6>Code postal : </h6>
             </div>
-
-            <div class="row">
-              <div class="col-2">
-                <h6>Ville : </h6>
-              </div>
-              <div class="col-2">
-                <h5><%= @client.ville %></h5>
-              </div>
+            <div class="col-2">
+              <h5><%= @client.codepostal %></h5>
             </div>
-
-            <div class="row">
-              <div class="col-2">
-                <h6>Tel : </h6>
-              </div>
-              <div class="col-2">
-                <h5>0<%= @client.telephone %></h5>
-              </div>
+          </div>
+          <div class="row">
+            <div class="col-2">
+              <h6>Ville : </h6>
             </div>
-
-            <div class="row">
-              <div class="col-2">
-                <h6>Email : </h6>
-              </div>
-              <div class="col-2">
-                <h5><%= @client.email %></h5>
-              </div>
+            <div class="col-2">
+              <h5><%= @client.ville %></h5>
             </div>
-
-            <div class="row">
-              <div class="col-2">
-                <h6>Contact : </h6>
-              </div>
-              <div class="col-2">
-                <h5><%= @client.contact %></h5>
-              </div>
+          </div>
+          <div class="row">
+            <div class="col-2">
+              <h6>Tel : </h6>
             </div>
-
-            <div class="row">
-              <div class="col-2">
-                <h6>Referent : </h6>
-              </div>
-              <div class="col-2">
-                <h5><%= @client.referent %></h5>
-              </div>
+            <div class="col-2">
+              <h5>0<%= @client.telephone %></h5>
             </div>
-
-            <div class="row">
-              <div class="col-2">
-                <h6>Tel.Referent : </h6>
-              </div>
-              <div class="col-2">
-                <h5>0<%= @client.telreferent %></h5><br>
+          </div>
+          <div class="row">
+            <div class="col-2">
+              <h6>Email : </h6>
+            </div>
+            <div class="col-2">
+              <h5><%= @client.email %></h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-2">
+              <h6>Contact : </h6>
+            </div>
+            <div class="col-2">
+              <h5><%= @client.contact %></h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-2">
+              <h6>Referent : </h6>
+            </div>
+            <div class="col-2">
+              <h5><%= @client.referent %></h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-2">
+              <h6>Tel.Referent : </h6>
+            </div>
+            <div class="col-2">
+              <h5>0<%= @client.telreferent %></h5><br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-1">
+              <div class="float-start">
+                <%= link_to "Edition", {controller: "clients", action: "edit"}, class: "btn btn-outline-primary" %>
               </div>
             </div>
-
-            <div class="row">
-              <div class="col-1">
-                <div class="float-start">
-                  <%= link_to "Edition", {controller: "clients", action: "edit"}, class: "btn btn-outline-primary" %>
-                </div>
-              </div>
-              <div class="col-1">
-                <div class="float-end">
-                  <%= button_to "Supprimer", @client, :method => :delete, class: 'btn btn-danger' %>
-                </div>
+            <div class="col-1">
+              <div class="float-end">
+                <%= button_to "Supprimer", @client, :method => :delete, class: 'btn btn-danger' %>
               </div>
             </div>
+          </div>
         </div>
       </div>
-
-
       <div class="card cardrender">
-
-          <div class="text-center fontab" style="padding: 20px; color:black">
-            <h2>Inventaires</h2>
-          </div>
-
-          <% @client.inventaires.each do |inventaire| %>
-     <table class="table table-bordered text-center">
+        <div class="text-center fontab" style="padding: 20px; color:black">
+          <h2>Inventaires</h2>
+        </div>
+        <% @client.inventaires.each do |inventaire| %>
+      <table class="table table-bordered text-center">
         <thead class="thead-dark">
           <tr class="fontab">
             <th scope="col">#id</th>
@@ -131,62 +118,48 @@
           </tr>
         </tbody>
       </table>
-
       <% end %>
-
       <div class="text-center fontab" style="margin: 20px; color:black">
         <h2>Ajouter un inventaire :</h2>
       </div>
         <%= form_with model: [ @client, @client.inventaires.build ] do |form| %>
-          <a class="fontabindex">
-            <%= form.label :quantité %><br>
-            <%= form.text_field :quantity, class: 'form-control' %>
+        <a class="fontabindex">
+          <%= form.label :quantité %><br>
+          <%= form.text_field :quantity, class: 'form-control' %>
+        </a>
+        <a class="fontabindex">
+          <%= form.label :total %><br>
+          <%= form.text_field :total, class: 'form-control' %>
+        </a>
+        <div style="padding: 20px">
+          <a>
+            <%= form.submit "Envoyer", class: 'btn btn-success btn-lg' %>
           </a>
-          <a class="fontabindex">
-            <%= form.label :total %><br>
-            <%= form.text_field :total, class: 'form-control' %>
-          </a>
-          <div style="padding: 20px">
-            <a>
-              <%= form.submit "Envoyer", class: 'btn btn-success btn-lg' %>
-            </a>
-          <% end %>
-        </div>
-
-
-
-
-
-
-
-
-
-        <div class="text-center fontab" style="margin: 20px; color:black">
+        <% end %>
+      </div>
+      <div class="text-center fontab" style="margin: 20px; color:black">
         <h2>Générer une facture :</h2>
       </div>
-        <%= form_with model: [ @client, @client.facture.build ] do |form| %>
-          <a class="fontabindex">
-            <%= form.label :client %><br>
-            <div class="col-md-2">
-              <%= form.text_field :client_id, class: 'form-control-plaintext' %>
-            </div>
-
+      <%= form_with model: [ @client, @client.facture.build ] do |form| %>
+        <a class="fontabindex">
+        <%= form.label :client %><br>
+      <div class="col-md-2">
+        <%= form.text_field :client_id, class: 'form-control-plaintext' %>
+      </div>
+        </a>
+        <a class="fontabindex">
+          <%= form.label :inventaire %><br>
+          <%= form.select :inventaire_id, options_for_select(Client.find(params[:id]).inventaires.map{|i| [i.id]}, form.object.inventaire_id), {}, {class: "form-control"} %>
+        </a>
+        <div style="padding: 20px">
+          <a>
+            <%= form.submit "Générer", class: 'btn btn-success btn-lg' %>
           </a>
-          <a class="fontabindex">
-            <%= form.label :inventaire %><br>
-            <%= form.select :inventaire_id, options_for_select(Client.find(params[:id]).inventaires.map{|i| [i.id]}, form.object.inventaire_id), {}, {class: "form-control"} %>
+          <a>
+            <%= link_to 'Show', client_facture_path(@client), class: 'btn btn-success btn-lg' %>
           </a>
-          <div style="padding: 20px">
-            <a>
-              <%= form.submit "Générer", class: 'btn btn-success btn-lg' %>
-            </a>
-            <a>
-              <%= link_to 'Show', client_facture_path(@client), class: 'btn btn-success btn-lg' %>
-            </a>
           <% end %>
-
         </div>
-
       </div>
     </div>
   </div>

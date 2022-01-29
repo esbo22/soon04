@@ -1,6 +1,6 @@
 class Inventaire < ApplicationRecord
   belongs_to :client
-  belongs_to :facture
+  has_many :facture
 end
   # belongs to = appartient à
   # has many = a beaucoup

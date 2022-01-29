@@ -4,18 +4,13 @@
     <%= form.label :nom, class: 'form-label' %>
     <%= form.text_field :nom, class: 'form-control' %>
   </div>
-
-
-
-
-
-  <div class="col-md-3">
-    <%= form.label :ville, class: 'form-label' %>
-    <%= form.text_field :ville, class: 'form-control' %>
-  </div>
   <div class="col-3">
     <%= form.label :adresse, class: 'form-label' %>
     <%= form.text_area :adresse, class: 'form-control' %>
+  </div>
+  <div class="col-md-3">
+    <%= form.label :ville, class: 'form-label' %>
+    <%= form.text_field :ville, class: 'form-control' %>
   </div>
   <div class="col-2">
     <%= form.label :codepostal, class: 'form-label' %>
@@ -39,9 +34,8 @@
   </div>
   <div class="col-md-4">
     <%= form.label :email, class: 'form-label' %>
-    <%= form.text_field :email, class: 'form-control' %></br
+    <%= form.text_field :email, class: 'form-control' %></br>
   </div>
-
   <div class="col-12">
     <%= form.submit "Envoyer", class: 'btn btn-success btn-lg' %>
   </div>
