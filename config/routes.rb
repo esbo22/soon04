@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   resources :clients do
     resources :factures
   end
+
+  resources :inventaires do
+    resources :articles
+  end
 end

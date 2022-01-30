@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_211207) do
+ActiveRecord::Schema.define(version: 2022_01_30_134146) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string "serial"
+    t.integer "facture_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["facture_id"], name: "index_articles_on_facture_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "categorie"
+    t.integer "article_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_categories_on_article_id"
+  end
 
   create_table "clients", force: :cascade do |t|
     t.string "nom"
@@ -44,7 +60,27 @@ ActiveRecord::Schema.define(version: 2022_01_18_211207) do
     t.index ["client_id"], name: "index_inventaires_on_client_id"
   end
 
+  create_table "marques", force: :cascade do |t|
+    t.string "marque"
+    t.integer "article_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_marques_on_article_id"
+  end
+
+  create_table "modeles", force: :cascade do |t|
+    t.string "modele"
+    t.integer "article_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_modeles_on_article_id"
+  end
+
+  add_foreign_key "articles", "factures"
+  add_foreign_key "categories", "articles"
   add_foreign_key "factures", "clients"
   add_foreign_key "factures", "inventaires"
   add_foreign_key "inventaires", "clients"
+  add_foreign_key "marques", "articles"
+  add_foreign_key "modeles", "articles"
 end
